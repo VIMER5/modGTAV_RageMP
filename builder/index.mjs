@@ -10,35 +10,25 @@ let outdir = {
   server: path.join(serverRootDir, "/packages"),
   client: path.join(serverRootDir, "/client_packages"),
 };
-
+function addContext(path, name) {
+  return {
+    entryPoints: ["src/server/src/**/*.ts"],
+    outdir: path,
+    outbase: `src/${name}/src/`,
+    platform: "node",
+    format: "cjs",
+    target: ["es2020"],
+    sourcemap: false,
+    bundle: false,
+    ignoreAnnotations: false,
+    metafile: true,
+    plugins: [ClearDir, DoneBuild],
+  };
+}
 const isWatch = process.argv.includes("--watch");
 async function buildAll() {
-  const server = await esbuild.context({
-    entryPoints: ["src/server/src/**/*.ts"],
-    outdir: outdir.server,
-    outbase: "src/server/src/",
-    platform: "node",
-    format: "cjs",
-    target: ["es2020"],
-    sourcemap: false,
-    bundle: false,
-    ignoreAnnotations: false,
-    metafile: true,
-    plugins: [ClearDir, DoneBuild],
-  });
-  const client = await esbuild.context({
-    entryPoints: ["src/client/src/**/*.ts"],
-    outdir: outdir.client,
-    outbase: "src/client/src/",
-    platform: "node",
-    format: "cjs",
-    target: ["es2020"],
-    sourcemap: false,
-    bundle: false,
-    ignoreAnnotations: false,
-    metafile: true,
-    plugins: [ClearDir, DoneBuild],
-  });
+  const server = await esbuild.context(addContext(outdir.server, "server"));
+  const client = await esbuild.context(addContext(outdir.client, "client"));
 
   if (isWatch) {
     await server.watch();

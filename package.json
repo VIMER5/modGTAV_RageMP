@@ -12,6 +12,7 @@
     "p:run": "cd server-files && ragemp-server.exe"
   },
   "devDependencies": {
+    "@ragempcommunity/types-cef": "^2.1.9",
     "@ragempcommunity/types-client": "^2.1.9",
     "@ragempcommunity/types-server": "^2.1.9",
     "concurrently": "^9.2.1",
