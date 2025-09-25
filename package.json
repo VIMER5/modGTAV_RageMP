@@ -1,0 +1,26 @@
+{
+  "name": "server-files",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:run": "nodemon",
+    "dev:build": "node builder/index.mjs --watch",
+    "p:build": "node builder/index.mjs",
+    "p:run": "cd server-files && ragemp-server.exe"
+  },
+  "devDependencies": {
+    "@ragempcommunity/types-client": "^2.1.9",
+    "@ragempcommunity/types-server": "^2.1.9",
+    "concurrently": "^9.2.1",
+    "dotenv-cli": "^10.0.0",
+    "esbuild": "0.25.10",
+    "nodemon": "^3.1.10",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2"
+  }
+}

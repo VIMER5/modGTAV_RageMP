@@ -1,0 +1,7 @@
+{
+  "delay": "100",
+  "ext": "js,json",
+  "watch": ["./server-files/client_packages", "./server-files/packages"],
+  "exec": "cd server-files && ragemp-server.exe",
+  "ignore": ["config.json", "logs/**"]
+}
