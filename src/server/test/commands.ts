@@ -14,19 +14,9 @@ mp.events.add('playerDeath', (player) => {
 });
 
 mp.events.addCommand('car', (player) => {
-  player.spawn(
-    new mp.Vector3({
-      x: -425.517,
-      y: 1123.62,
-      z: 325.8544,
-    }),
-  );
+  player.spawn(new mp.Vector3({ x: -425.517, y: 1123.62, z: 325.8544 }));
   mp.vehicles.new(
     'prairie',
-    new mp.Vector3({
-      x: -425.517,
-      y: 1123.62,
-      z: 325.8544,
-    }),
+    new mp.Vector3({ x: -425.517, y: 1123.62, z: 325.8544 }),
   );
 });

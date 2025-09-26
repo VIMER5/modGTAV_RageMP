@@ -9,7 +9,9 @@
     "dev:run": "nodemon",
     "dev:build": "node builder/index.mjs --watch",
     "p:build": "node builder/index.mjs",
-    "p:run": "cd server-files && ragemp-server.exe"
+    "p:run": "cd server-files && ragemp-server.exe",
+    "b": "tsc -p src/server/tsconfig.json --watch --build --clean",
+    "start": "node builder/index.mjs --watch"
   },
   "devDependencies": {
     "@ragempcommunity/types-cef": "^2.1.9",
@@ -23,6 +25,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "dotenv": "^17.2.2"
+    "dotenv": "^17.2.2",
+    "esbuild-plugin-tsc": "^0.5.0"
   }
 }
