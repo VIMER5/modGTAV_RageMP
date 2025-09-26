@@ -12,12 +12,14 @@
     "p:run": "cd server-files && ragemp-server.exe"
   },
   "devDependencies": {
+    "@ragempcommunity/types-cef": "^2.1.9",
     "@ragempcommunity/types-client": "^2.1.9",
     "@ragempcommunity/types-server": "^2.1.9",
     "concurrently": "^9.2.1",
     "dotenv-cli": "^10.0.0",
     "esbuild": "0.25.10",
     "nodemon": "^3.1.10",
+    "prettier": "3.6.2",
     "typescript": "^5.9.2"
   },
   "dependencies": {
