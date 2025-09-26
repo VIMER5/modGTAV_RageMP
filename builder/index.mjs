@@ -12,9 +12,9 @@ let outdir = {
 };
 function addContext(path, name) {
   return {
-    entryPoints: ["src/server/src/**/*.ts"],
+    entryPoints: [`src/${name}/**/*.ts`],
     outdir: path,
-    outbase: `src/${name}/src/`,
+    outbase: `src/${name}/`,
     platform: "node",
     format: "cjs",
     target: ["es2020"],
@@ -22,6 +22,8 @@ function addContext(path, name) {
     bundle: false,
     ignoreAnnotations: false,
     metafile: true,
+    minify: false,
+    charset: 'utf8',
     plugins: [ClearDir, DoneBuild],
   };
 }
