@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "./",
-    "outDir": "./../../builder/temp/server",
+    "outDir": "./../../builder/temp/client",
     "types": ["../../node_modules/@ragempcommunity/types-client"]
   },
   "include": ["./**/*.ts"]
